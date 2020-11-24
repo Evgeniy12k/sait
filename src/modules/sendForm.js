@@ -63,7 +63,7 @@ for(let i = 0; i < form.length; i++) {
   document.addEventListener('input', (event) => {
     let target = event.target;
     if(target.matches('.form-email') || target.matches('.top-form form-email')){
-        target.value = target.value.replace(/^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{3,4})$/gi, '');
+        target.value = target.value.replace(/^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})/gi, '');
     }
 });
 
@@ -72,7 +72,7 @@ for(let i = 0; i < form.length; i++) {
     document.addEventListener('input', (event) => {
         let target = event.target;
         if(target.matches('.form-name') || target.matches('.mess') || target.matches('.top-form-name')){
-            target.value = target.value.replace(/[^А-Яа-яЁе \,\.\!\? ]/gi, '');
+            target.value = target.value.replace(/[^А-Яа-яЁе \,\.\!\?]/gi, '');
         }
     });
 // проверяем строки Input на правильный ввод числа
@@ -81,12 +81,13 @@ for(let i = 0; i < form.length; i++) {
         
         let target = event.target;
         if(target.matches('.form-phone')){
-            if (target.value.length > 15 && target.value.length != '' ){
-              alert('введите правильный номер') ;
-            }   
-        }  target.value = target.value.replace(/[^+0-9]{3,12}$/);
+            target.value = target.value.replace(/[^+0-9]{5,13}$/);
+            if (target.value.length > 15 ){
+            alert('введите правильный номер') ;
+          }   
+        }  
       
-       
+        
        
          })
          
