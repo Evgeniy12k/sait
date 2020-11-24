@@ -63,7 +63,7 @@ for(let i = 0; i < form.length; i++) {
   document.addEventListener('input', (event) => {
     let target = event.target;
     if(target.matches('.form-email') || target.matches('.top-form form-email')){
-        target.value = target.value.replace(/^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})/gi, '');
+        target.value = target.value.replace(/^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{3,4})/gi, '');
     }
 });
 
@@ -81,8 +81,8 @@ for(let i = 0; i < form.length; i++) {
         
         let target = event.target;
         if(target.matches('.form-phone')){
-            target.value = target.value.replace(/[^+0-9]{5,13}$/);
-            if (target.value.length > 15 ){
+            target.value = target.value.replace(/[^+0-9]{5,18}$/);
+            if (target.value.length > 16 && target.value.length !=''  ){
             alert('введите правильный номер') ;
           }   
         }  
