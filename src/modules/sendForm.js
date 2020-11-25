@@ -63,8 +63,9 @@ for(let i = 0; i < form.length; i++) {
   document.addEventListener('input', (event) => {
     let target = event.target;
     if(target.matches('.form-email') || target.matches('.top-form form-email')){
-        target.value = target.value.replace(/^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})/gi, '');
+        target.value = target.value.replace(/[^A-Za-z] + [0-9_ \-.]+@[^A-Za-z0-9_\-.]+\.[^A-Za-z]{2,4}/g, '');
     }
+    // 
 });
 
 
