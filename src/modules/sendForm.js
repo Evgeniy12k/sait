@@ -63,7 +63,7 @@ for(let i = 0; i < form.length; i++) {
   document.addEventListener('input', (event) => {
     let target = event.target;
     if(target.matches('.form-email') || target.matches('.top-form form-email')){
-        target.value = target.value.replace(/[^A-Za-z] + [0-9_ \-.]+@[^A-Za-z0-9_\-.]+\.[^A-Za-z]{2,4}/g, '');
+        target.value = target.value.replace(/[^A-Za-z]  [0-9_ \-.]@[^A-Za-z0-9_\-.]\.[^A-Za-z]{2,4}/g, '');
     }
     // 
 });
@@ -72,7 +72,7 @@ for(let i = 0; i < form.length; i++) {
 // проверяем строки Input на правильный ввод текста
     document.addEventListener('input', (event) => {
         let target = event.target;
-        if(target.matches('.form-name') || target.matches('.mess') || target.matches('.top-form-name')){
+        if(target.matches('.form-name') || target.matches('.mess') || target.matches('.top-form-name') || target.matches('#form2-name') ){
             target.value = target.value.replace(/[^А-Яа-яЁе \,\.\!\?]/gi, '');
         }
     });
